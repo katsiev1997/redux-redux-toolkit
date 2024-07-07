@@ -1,16 +1,15 @@
 import { memo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
-import { selectSelectedUserId, selectSortedUsers, UserId } from "./users.slice";
+import { usersSlice, UserId } from "./users.slice";
 
 export function UsersList() {
   const [sortType, setSortType] = useState<"asc" | "desc">("asc");
 
   const sortedUsers = useAppSelector((state) =>
-    selectSortedUsers(state, sortType)
+    usersSlice.selectors.selectSortedUsers(state, sortType)
   );
 
-  const selectedUserId = useAppSelector(selectSelectedUserId);
-  
+  const selectedUserId = useAppSelector(usersSlice.selectors.selectSelectedUserId);
 
   return (
     <div className="flex flex-col items-center">
