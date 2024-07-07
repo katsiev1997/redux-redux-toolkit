@@ -21,7 +21,7 @@ export function Counter({ counterId }: { counterId: CounterId }) {
   const dispatch = useDispatch();
 
 
-  // Правила ипользования селекторов
+  // Правила использования селекторов
   // Выбирать как можно меньшие данные
   // Желательно иметь сложность алгоритма O(1) максимум O(n)
   // Не создавать новые ссылки state => state.users.toSorted(sortFn)
